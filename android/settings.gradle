@@ -1,0 +1,3 @@
+rootProject.name = 'GamerNetWorkUi'
+
+include ':app'
