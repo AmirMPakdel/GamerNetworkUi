@@ -11,16 +11,6 @@ import Tabbar from './src/components/Tabbar';
 
 const RootStack = createTabNavigator({
 
-  Settings:{
-
-    screen:Settings,
-  },
-
-  Chests:{
-
-    screen:Chests
-  },
-
   Home: {
     screen: Home
   },
@@ -31,9 +21,17 @@ const RootStack = createTabNavigator({
 
   Shop:{
     screen: Shop
-  }
+  },
 
-  
+  Settings:{
+
+    screen:Settings,
+  },
+
+  Chests:{
+
+    screen:Chests
+  }
 },
 {
   initialRouteName: 'Home',
