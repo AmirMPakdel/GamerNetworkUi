@@ -14,19 +14,19 @@ export default class Chests extends React.Component{
 
             <View style={styles.container}>
 
-                <Tab src={require('./../images/web-page-home.png')} name="Home"
+                <Tab src={require('./../images/home.svg')} name="Home"
                 selectedTab={this.state.selectedTab} tabSelected={this.select}/>
 
-                <Tab src={require('./../images/star.png')} name="Trending"
+                <Tab src={require('./../images/star.svg')} name="Trending"
                 selectedTab={this.state.selectedTab} tabSelected={this.select}/>
 
-                <Tab src={require('./../images/user.png')} name="Profile"
+                <Tab src={require('./../images/user.svg')} name="Profile"
                 selectedTab={this.state.selectedTab} tabSelected={this.select}/>
 
-                <Tab src={require('./../images/notification-bell.png')} name="News"
+                <Tab src={require('./../images/notification.svg')} name="News"
                 selectedTab={this.state.selectedTab} tabSelected={this.select}/>
 
-                <Tab src={require('./../images/controls.png')} name="Settings"
+                <Tab src={require('./../images/controls.svg')} name="Settings"
                 selectedTab={this.state.selectedTab} tabSelected={this.select}/>
 
             </View>
@@ -49,9 +49,9 @@ export default class Chests extends React.Component{
 const styles = StyleSheet.create({
 
     container:{
-        height:'10%',
+        height:'9%',
         width:'100%',
         flexDirection:'row',
-        backgroundColor:'rgba(30,30,30,1)'
+        backgroundColor:'#232323'
     }
 })

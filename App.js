@@ -19,8 +19,8 @@ const RootStack = createTabNavigator(
       screen: Trending
     },
 
-    Profile: {
-      screen: Profile
+    Signin:{
+      screen:Signin
     },
 
     News: {
@@ -30,13 +30,9 @@ const RootStack = createTabNavigator(
     Settings: {
       screen: Settings
     },
-
-    Signin:{
-      screen:Signin
-    }
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Signin",
 
     animationEnabled: true,
 
@@ -56,9 +52,18 @@ const RootStack = createTabNavigator(
   }
 );
 
+onTabChanged = (prevState, currentState)=>{
+  
+  if (!currentState) return null;
+  const route = currentState.routes[currentState.index];
+  if (route.routes) return getCurrentRouteName(route);
+  return route.routeName;
+
+}
+
 export default class App extends Component {
   render() {
-    return <RootStack />;
+    return <RootStack onNavigationStateChange={this.onTabChanged}/>;
   }
 }
 

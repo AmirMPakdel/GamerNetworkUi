@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableWithoutFeedback}
-from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableWithoutFeedback} from 'react-native';
+import SvgUri from 'react-native-svg-uri';
 
 export default class Tab extends React.Component{
 
@@ -21,38 +21,41 @@ export default class Tab extends React.Component{
     render(){
       if(this.props.name === this.props.selectedTab){
 
-        glassJsx = <View style={{
+        glassJsx = <View blurRadius={50} style={{
           position:'absolute',
           height:'100%',
           width:'100%',
           elevation:5,
-          backgroundColor:'gold',
+          //backgroundColor:'#FACF7F',
           opacity:0.2
         }}/>
 
         lineJsx = <View style={{
-          height:'8%',
+          height:'6%',
           width:'100%',
-          backgroundColor:'gold',
-          opacity:0.6
+          backgroundColor:'#F8BC4D',
+          opacity:0.95
         }}/>
+
+        fillColor = '#F8BC4D'
 
       }else{
 
           glassJsx = <View style={styles.glass}/>
           lineJsx = <View style={styles.line}/>
+          fillColor = '#FFFFFF'
       }
 
       return(
           <TouchableWithoutFeedback onPress={this.onTabPressed}>
           <View style={styles.container}>
 
-              {glassJsx}
-              {lineJsx}
+            {glassJsx}
+            {lineJsx}
 
-              <View style={styles.icon_container}>
-                  <Image source={this.icon_src} style={styles.icon}/>
-              </View>
+            <View style={styles.icon_container}>
+                <SvgUri source={this.icon_src} fill={fillColor} style={styles.icon}/>
+            </View>
 
           </View>
           </TouchableWithoutFeedback>
@@ -69,7 +72,7 @@ const styles = StyleSheet.create(
             marginLeft:5,
             marginRight:5,
             zIndex:1,
-            backgroundColor:'rgb(20,20,20)'
+            backgroundColor:'#232323'
 
         },
 
@@ -79,15 +82,15 @@ const styles = StyleSheet.create(
             height:'100%',
             width:'100%',
             elevation:5,
-            backgroundColor:'gold',
+            backgroundColor:'rgba(244, 183, 71,0.97)',
             opacity:0
         },
 
         line:{
 
-            height:'8%',
+            height:'6%',
             width:'100%',
-            backgroundColor:'gold',
+            backgroundColor:'#F9C25B',
             opacity:0
         },
 
@@ -98,7 +101,6 @@ const styles = StyleSheet.create(
             paddingRight:15,
             paddingTop:8,
             paddingBottom:8,
-            zIndex:4,
             justifyContent:'center',
             alignItems:'center'
 
@@ -108,7 +110,9 @@ const styles = StyleSheet.create(
 
             height:'100%',
             width:'100%',
-            zIndex:4,
+            elevation:5,
+            shadowOffset:{height:10,width:10},
+            shadowColor:"#F8BC4D",
             resizeMode:'stretch'
         }
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {StyleSheet, Text, View, ImageBackground, Dimensions} from 'react-native';
 
 
 
@@ -10,10 +10,13 @@ export default class News extends React.Component{
 
         return(
 
-            <View style={styles.container}>
-                <Button style={styles.button} title="Back" onPress={this.onpress}/>
-                <Text style={styles.title}>News</Text>
-            </View>
+            <ImageBackground style={styles.bg} blurRadius={1} source={require('./../images/signin_bg.png')}>
+                <View style={styles.container}>
+                    <View style={styles.circle}>
+                        
+                    </View>
+                </View>
+            </ImageBackground>
         );
     }
 
@@ -23,22 +26,27 @@ export default class News extends React.Component{
     }
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create(
 
-    container:{
-        flex: 1, alignItems: 'center', justifyContent: 'center'
-    },
+    {
+        bg:{
+            height:'100%',
+            width:'100%',
+        },
 
-    title:{
+        container:{
 
-        fontSize:26
-    },
+            flex:1,
+            justifyContent:'flex-end',
+            alignItems:'center'
+        },
 
-    button:{
-
-        height:'20%',
-        width:'80%'
-
+        circle:{
+            height:'70%',
+            width: '170%',
+            backgroundColor:'#FACF7F',
+            borderTopLeftRadius: Dimensions.get('window').width * 2,
+            borderTopRightRadius:Dimensions.get('window').width * 2,
+        }
     }
-
-})
+)
