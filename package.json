@@ -11,7 +11,6 @@
         "axios": "^0.18.0",
         "react": "16.4.1",
         "react-native": "0.56.0",
-        "react-native-socket.io": "^0.3.1",
         "react-native-svg": "^6.5.2",
         "react-native-svg-uri": "^1.2.3",
         "react-native-ui-kitten": "^3.0.1",
@@ -27,5 +26,10 @@
     },
     "jest": {
         "preset": "react-native"
-    }
+    },
+    "rnpm": {
+        "assets": [
+       "./src/fonts/"
+        ]
+      }
 }
