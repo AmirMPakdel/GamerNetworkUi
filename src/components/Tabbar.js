@@ -35,8 +35,11 @@ export default class Chests extends React.Component{
 
     select = (name)=>{
 
+        if(name === "Profile"){
+            this.props.navigation.navigate('Signin');
+        }else{
         this.props.navigation.navigate(name)
-
+        }
         state = {selectedTab:name}
 
         this.setState(state);

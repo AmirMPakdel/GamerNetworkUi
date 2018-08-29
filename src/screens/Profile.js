@@ -5,7 +5,7 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 export default class Shop extends React.Component{
 
     render(){
-
+        
         return(
 
             <View style={styles.container}>

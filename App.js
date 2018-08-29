@@ -7,6 +7,7 @@ import Profile from "./src/screens/Profile";
 import News from "./src/screens/News";
 import Settings from "./src/screens/Settings";
 import Tabbar from "./src/components/Tabbar";
+import Signin from "./src/screens/Signin";
 
 const RootStack = createTabNavigator(
   {
@@ -28,6 +29,10 @@ const RootStack = createTabNavigator(
 
     Settings: {
       screen: Settings
+    },
+
+    Signin:{
+      screen:Signin
     }
   },
   {
