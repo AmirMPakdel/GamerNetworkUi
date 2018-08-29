@@ -33,7 +33,7 @@ export default class Tab extends React.Component{
         lineJsx = <View style={{
           height:'6%',
           width:'100%',
-          backgroundColor:'#F8BC4D',
+          backgroundColor:'#FFEA84',
           opacity:0.95
         }}/>
 

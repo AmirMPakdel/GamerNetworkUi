@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, ImageBackground, Dimensions} from 'react-native';
-
+import MuniTextView from './../components/UI/MuniTextView'
 
 
 export default class News extends React.Component{
@@ -10,10 +10,16 @@ export default class News extends React.Component{
 
         return(
 
-            <ImageBackground style={styles.bg} blurRadius={1} source={require('./../images/signin_bg.png')}>
+            <ImageBackground style={styles.bg} blurRadius={0.4} source={require('./../images/3.png')}>
                 <View style={styles.container}>
+
+                    <View style={styles.title_con}>
+                        <MuniTextView style={styles.tilte}
+                        fontSize={40} color="#f8f8f8">News</MuniTextView>
+                    </View>
+                    
                     <View style={styles.circle}>
-                        
+
                     </View>
                 </View>
             </ImageBackground>
@@ -43,10 +49,22 @@ const styles = StyleSheet.create(
 
         circle:{
             height:'70%',
-            width: '170%',
-            backgroundColor:'#FACF7F',
+            width: '180%',
+            opacity:0.94,
+            backgroundColor:'rgb(252,236,161)',
+            elevation:20,
             borderTopLeftRadius: Dimensions.get('window').width * 2,
             borderTopRightRadius:Dimensions.get('window').width * 2,
+        },
+
+        title_con:{
+            height:'28%',
+            width:'84%',
+
+        },
+
+        title:{
+            margin:30,
         }
     }
 )

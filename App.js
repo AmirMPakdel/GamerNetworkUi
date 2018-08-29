@@ -32,9 +32,11 @@ const RootStack = createTabNavigator(
     },
   },
   {
-    initialRouteName: "Signin",
+    initialRouteName: "Home",
 
     animationEnabled: true,
+
+    swipeEnabled:false,//for now
 
     tabBarComponent: Tabbar,
 

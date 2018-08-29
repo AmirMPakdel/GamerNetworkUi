@@ -10,7 +10,8 @@ const MuniTextView = props => {
         muniText: {
             fontFamily: 'Muli',
             fontSize: +props.fontSize,
-            color: props.color
+            color: props.color,
+            elevation:10
         }
     });
 
