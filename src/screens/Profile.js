@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 
-export default class Contests extends React.Component{
+export default class Shop extends React.Component{
 
     render(){
 
@@ -10,7 +10,7 @@ export default class Contests extends React.Component{
 
             <View style={styles.container}>
                 <Button style={styles.button} title="Next" onPress={this.onpress}/>
-                <Text style={styles.title}>Contests</Text>
+                <Text style={styles.title}>Profile</Text>
             </View>
         );
     }
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1, alignItems: 'center', justifyContent: 'center'
     },
-
+    
     title:{
 
         fontSize:26

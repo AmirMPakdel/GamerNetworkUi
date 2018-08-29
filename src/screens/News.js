@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 
 
 
-export default class Chests extends React.Component{
+export default class News extends React.Component{
 
 
     render(){
@@ -12,7 +12,7 @@ export default class Chests extends React.Component{
 
             <View style={styles.container}>
                 <Button style={styles.button} title="Back" onPress={this.onpress}/>
-                <Text style={styles.title}>Chests</Text>
+                <Text style={styles.title}>News</Text>
             </View>
         );
     }

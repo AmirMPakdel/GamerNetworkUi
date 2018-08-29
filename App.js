@@ -1,81 +1,67 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {createTabNavigator} from 'react-navigation';
-import Home from './src/screens/Home';
-import Chests from './src/screens/Chests';
-import Settings from './src/screens/Settings';
-import Contests from './src/screens/Contests';
-import Shop from './src/screens/Shop';
-import Tabbar from './src/components/Tabbar';
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { createTabNavigator } from "react-navigation";
+import Home from "./src/screens/Home";
+import Trending from "./src/screens/Trending";
+import Profile from "./src/screens/Profile";
+import News from "./src/screens/News";
+import Settings from "./src/screens/Settings";
+import Tabbar from "./src/components/Tabbar";
 
+const RootStack = createTabNavigator(
+  {
+    Home: {
+      screen: Home
+    },
 
-const RootStack = createTabNavigator({
+    Trending: {
+      screen: Trending
+    },
 
-  Home: {
-    screen: Home
+    Profile: {
+      screen: Profile
+    },
+
+    News: {
+      screen: News
+    },
+
+    Settings: {
+      screen: Settings
+    }
   },
+  {
+    initialRouteName: "Home",
 
-  Contests:{
-    screen: Contests
-  },
+    animationEnabled: true,
 
-  Shop:{
-    screen: Shop
-  },
+    tabBarComponent: Tabbar,
 
-  Settings:{
+    tabBarPosition: "bottom",
 
-    screen:Settings,
-  },
+    tabBarOptions: {
+      tabStyle: {
+        backgroundColor: "green"
+      },
 
-  Chests:{
-
-    screen:Chests
+      tabStyle: {
+        backgroundColor: "red"
+      }
+    }
   }
-},
-{
-  initialRouteName: 'Home',
-
-  animationEnabled: true,
-
-  tabBarComponent:Tabbar,
-
-  tabBarPosition:'bottom',
-  
-  tabBarOptions:{
-    
-    tabStyle:{
-
-    backgroundColor:'green',
-
-  },
-
-  tabStyle:{
-
-    backgroundColor:'red',
-
-  }
-}
-});
+);
 
 export default class App extends Component {
-
-  ;
-
   render() {
-    return (
-      
-        <RootStack />
-      
-    );
+    return <RootStack />;
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(23,23,23,0.5)',
-  },
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(23,23,23,0.5)"
+  }
 });
