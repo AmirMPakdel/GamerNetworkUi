@@ -11,22 +11,8 @@ import MuniTextView from '../components/UI/MuniText/MuniTextLight';
 export default class Settings extends React.Component {
     render() {
         return (
-            <ImageBackground
-                style={styles.bg}
-                blurRadius={0.6}
-                source={require('./../images/1.png')}>
-                <View style={styles.container}>
-                    <View style={styles.title_con}>
-                        <MuniTextView
-                            style={styles.tilte}
-                            fontSize={40}
-                            color="#f8f8f8">
-                            Settings
-                        </MuniTextView>
-                    </View>
-                    <View style={styles.circle} />
-                </View>
-            </ImageBackground>
+            <View>
+            </View>
         );
     }
 

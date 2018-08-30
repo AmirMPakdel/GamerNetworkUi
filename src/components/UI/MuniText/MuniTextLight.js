@@ -10,6 +10,7 @@ const MuniTextLight = props => {
         muniText: {
             fontFamily: 'Muli-ExtraLight',
             fontSize: +props.fontSize,
+            fontWeight: props.fontWeight,
             color: props.color
         }
     });
