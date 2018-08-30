@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, ImageBackground, Dimensions} from 'react-native';
-import MuniTextView from './../components/UI/MuniTextView';
+import MuniTextLight from './../components/UI/MuniText/MuniTextLight';
 import Sign_input from './../components/UI/Sign_input';
 export default class Signin extends React.Component{
 
@@ -17,8 +17,8 @@ export default class Signin extends React.Component{
                 <View style={styles.container}>
 
                     <View style={styles.title_con}>
-                        <MuniTextView style={styles.tilte}
-                        fontSize={40} color="#f8f8f8">Log in</MuniTextView>
+                        <MuniTextLight style={styles.tilte}
+                        fontSize={40} color="#f8f8f8">Log in</MuniTextLight>
                     </View>
                     <View style={styles.circle}>
                         
@@ -29,9 +29,9 @@ export default class Signin extends React.Component{
                         src={require('./../images/password_icon.png')}></Sign_input>
 
                         <View style={styles.texts_con}>
-                            <MuniTextView color="#F8BC4D">Create Account</MuniTextView>
+                            <MuniTextLight color="#F8BC4D">Create Account</MuniTextLight>
 
-                            <MuniTextView color="#F8BC4D">Forgot Password</MuniTextView>
+                            <MuniTextLight color="#F8BC4D">Forgot Password</MuniTextLight>
                         </View>
                         
                     </View>

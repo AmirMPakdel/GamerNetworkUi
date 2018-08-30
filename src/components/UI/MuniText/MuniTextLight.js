@@ -5,21 +5,20 @@ import { Text, StyleSheet } from 'react-native';
  * @param {fonntSize} fontSize 
  * @param {color} color
  */
-const MuniTextView = props => {
+const MuniTextLight = props => {
     const styles = StyleSheet.create({
         muniText: {
-            fontFamily: 'Muli',
+            fontFamily: 'Muli-ExtraLight',
             fontSize: +props.fontSize,
-            color: props.color,
-            elevation:10
+            color: props.color
         }
     });
 
     return (
-        <Text {...props} style={styles.muniText}>
+        <Text  {...props} style={styles.muniText}>
             {props.children}
         </Text>
     );
 };
 
-export default MuniTextView;
+export default MuniTextLight;
