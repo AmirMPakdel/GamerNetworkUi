@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Button} from 'react-native';
 import Tab from './Tab';
 
 
-
 export default class Chests extends React.Component{
 
     state = {selectedTab: "Home"}
@@ -49,8 +48,8 @@ export default class Chests extends React.Component{
 const styles = StyleSheet.create({
 
     container:{
-        height:'9%',
-        width:'100%',
+        height:'10%',
+        width:'60%',
         flexDirection:'row',
         backgroundColor:'#232323'
     }

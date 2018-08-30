@@ -99,8 +99,8 @@ const styles = StyleSheet.create(
             flex:1,
             paddingLeft:15,
             paddingRight:15,
-            paddingTop:8,
-            paddingBottom:8,
+            paddingTop:6,
+            paddingBottom:4,
             justifyContent:'center',
             alignItems:'center'
 

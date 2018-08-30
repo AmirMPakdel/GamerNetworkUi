@@ -11,23 +11,9 @@ import MuniTextLight from '../components/UI/MuniText/MuniTextLight';
 export default class News extends React.Component {
     render() {
         return (
-            <ImageBackground
-                style={styles.bg}
-                blurRadius={0.4}
-                source={require('./../images/3.png')}>
-                <View style={styles.container}>
-                    <View style={styles.title_con}>
-                        <MuniTextLight
-                            style={styles.tilte}
-                            fontSize={48}
-                            color="#f8f8f8">
-                            News
-                        </MuniTextLight>
-                    </View>
-
-                    <View style={styles.circle} />
-                </View>
-            </ImageBackground>
+            <View>
+                
+            </View>
         );
     }
 

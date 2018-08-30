@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
-
+import {BorderShadow} from 'react-native-shadow';
 
 export default class Home extends React.Component{
 
@@ -8,11 +8,8 @@ export default class Home extends React.Component{
 
         return(
 
-            <View style={styles.container}>
-                <Button style={styles.button} title="Next" onPress={this.onpress}/>
-            
-                <Text style={styles.title}>Home</Text>
-            
+            <View>
+                
             </View>
         );
     }
@@ -26,19 +23,11 @@ export default class Home extends React.Component{
 const styles = StyleSheet.create({
 
     container:{
-        flex: 1, alignItems: 'center', justifyContent: 'center'
+        
+        height:'100%',
+        width:'100%',
+        elevation:10,
+        alignItems: 'center', 
+        justifyContent: 'center',
     },
-
-    title:{
-
-        fontSize:26
-    },
-
-    button:{
-
-        height:'20%',
-        width:'80%'
-
-    }
-
 })

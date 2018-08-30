@@ -9,8 +9,7 @@ export default class Shop extends React.Component{
         return(
 
             <View style={styles.container}>
-                <Button style={styles.button} title="Next" onPress={this.onpress}/>
-                <Text style={styles.title}>Profile</Text>
+                
             </View>
         );
     }

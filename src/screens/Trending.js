@@ -24,7 +24,6 @@ export default class Trending extends React.Component {
         ];
         return (
             <View style={styles.container}>
-                <View style={styles.circle} />
 
                 <View style={{}}>
                     <TrendingList
@@ -40,23 +39,11 @@ export default class Trending extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'center'
+        position:'absolute',
+        height:'100%',
+        width:'100%',
+        zIndex:10,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
-
-    circle: {
-        height: '70%',
-        width: '170%',
-        position: 'absolute',
-        bottom: 0,
-        zIndex: -10,
-        elevation: 60,
-        opacity: 0.94,
-        borderColor: 'rgb(253, 237, 159)',
-        borderWidth: 1,
-        backgroundColor: 'rgb(253, 237, 159)',
-        borderTopLeftRadius: Dimensions.get('window').width * 2,
-        borderTopRightRadius: Dimensions.get('window').width * 2
-    }
 });

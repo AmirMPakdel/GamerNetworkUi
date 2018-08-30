@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet , View, TextInput, Image} from 'react-native';
+import {StyleSheet , View, TextInput,Dimensions, Image} from 'react-native';
 import SvgUri from 'react-native-svg-uri';
+import {BoxShadow} from 'react-native-shadow';
 
 
 export default class Sign_input extends React.Component{
@@ -8,10 +9,22 @@ export default class Sign_input extends React.Component{
 
     render(){
 
+        const shadowOpt={
+            height: Dimensions.get('window').height * 0.1,
+            width:Dimensions.get('window').width * 0.8,
+			color:"#a85c00",//"#db9a0f",
+			border:10,
+			radius:34,
+			opacity:0.6,
+			x:15,
+			y:20,
+			style:{marginVertical:5}
+        }
 
 
         return(
 
+            <BoxShadow style ={{flex:1}} setting={shadowOpt}>
             <View style={styles.container}>
 
                 <View style={styles.icon_con}>
@@ -28,6 +41,7 @@ export default class Sign_input extends React.Component{
                 </TextInput>
                 </View>
             </View>
+            </BoxShadow>
         )
     }
 }
@@ -35,20 +49,14 @@ export default class Sign_input extends React.Component{
 const styles = StyleSheet.create(
     {
         container:{
-            height:'15%',
-            width:'42%',
+            position:"relative",
+            height:'98%',
+            width:'98%',
             margin:14,
             flexDirection:'row',
             alignItems:'center',
-            backgroundColor:'rgba(255, 255, 255, 0.2)',
+            backgroundColor:'rgba(255, 255, 255, 0.9)',
             borderRadius:40,
-            elevation:10,
-            shadowOpacity:0.5,
-            borderColor:'gold',
-            borderWidth:5,
-            shadowColor:'gold',
-            shadowOpacity:0.5,
-            shadowOffset:{height:4,width:2}
         },
 
         icon_con:{
@@ -58,12 +66,15 @@ const styles = StyleSheet.create(
             paddingBottom:10,
             paddingLeft:12,
             paddingRight:12,
+            borderRadius:40,
+            backgroundColor:'blue'
         },
 
         icon:{
 
             height:'100%',
             width:'100%',
+            borderRadius:40,
             resizeMode:'stretch'
 
         },
@@ -71,12 +82,14 @@ const styles = StyleSheet.create(
         input_con:{
             height:'100%',
             width:'80%',
+            borderRadius:40,
             marginLeft:10,
             paddingRight:20,
         },
 
         input:{
-            
+            height:'100%',
+            width:'100%',
         }
     }
 )

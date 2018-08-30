@@ -13,34 +13,23 @@ export default class Signin extends React.Component{
     render(){
 
         return(
-            <ImageBackground style={styles.bg} blurRadius={0.4} source={require('./../images/2.png')}>
-                <View style={styles.container}>
+            <View style={styles.container}>
+                <Sign_input
+                src={require('./../images/email_icon.png')}></Sign_input>
+            
+                <Sign_input 
+                src={require('./../images/password_icon.png')}></Sign_input>
 
-                    <View style={styles.title_con}>
-                        <MuniTextLight style={styles.tilte}
-                        fontSize={48} color="#f8f8f8">Log in</MuniTextLight>
-                    </View>
-                    <View style={styles.circle}>
-                        
-                        <Sign_input
-                        src={require('./../images/email_icon.png')}></Sign_input>
-                    
-                        <Sign_input 
-                        src={require('./../images/password_icon.png')}></Sign_input>
+                <View style={styles.texts_con}>
+                    <MuniTextLight fontWeight="500"
+                    fontSize='15'
+                    color="rgba(219, 154, 15,0.8)">Create Account</MuniTextLight>
 
-                        <View style={styles.texts_con}>
-                            <MuniTextLight fontWeight="500"
-                            fontSize='15'
-                            color="rgba(219, 154, 15,0.8)">Create Account</MuniTextLight>
-
-                            <MuniTextLight fontWeight="500"
-                            fontSize='15'
-                            color="rgba(219, 154, 15,0.8)">Forgot Password!</MuniTextLight>
-                        </View>
-                        
-                    </View>
+                    <MuniTextLight fontWeight="500"
+                    fontSize='15'
+                    color="rgba(219, 154, 15,0.8)">Forgot Password!</MuniTextLight>
                 </View>
-            </ImageBackground>
+            </View>
         )
     }
 }
@@ -56,20 +45,8 @@ const styles = StyleSheet.create(
         container:{
 
             flex:1,
-            justifyContent:'flex-end',
-            alignItems:'center'
-        },
-
-        circle:{
-            height:'70%',
-            width: '170%',
             justifyContent:'center',
-            alignItems:'center',
-            elevation:20,
-            //opacity:0.94,
-            backgroundColor:'rgb(252,236,161)',
-            borderTopLeftRadius: Dimensions.get('window').width * 2,
-            borderTopRightRadius:Dimensions.get('window').width * 2,
+            alignItems:'center'
         },
 
         title_con:{
@@ -82,12 +59,14 @@ const styles = StyleSheet.create(
         },
 
         texts_con:{
-
+            
             height:'10%',
-            width:'42%',
+            width:'80%',
+            marginTop:20,
             flexDirection:'row',
             alignItems:'center',
             justifyContent:'space-between',
+            backgroundColor:'blue'
         },
 
         inputs:{
