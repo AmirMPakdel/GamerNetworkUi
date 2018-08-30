@@ -24,13 +24,16 @@ export default class Trending extends React.Component {
         ];
         return (
             <View style={styles.container}>
+                {/*the yellow circle of the background*/}
                 <View style={styles.circle} />
 
-                <View style={{}}>
+                {/* the container for the trending game list, elevation is to come above the circle */}
+                <View style={{ elevation: 10, marginTop: '10%' }}>
                     <TrendingList
                         data={data}
-                        itemWidth={290}
-                        itemHeight={350}
+                        // this values are just for the image , bottomCardSection will append 70 in height automatically
+                        itemWidth={280}
+                        itemHeight={340}
                     />
                 </View>
             </View>
@@ -51,11 +54,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         zIndex: -10,
-        elevation: 60,
-        opacity: 0.94,
+        elevation: 5,
+        opacity: 0.8,
         borderColor: 'rgb(253, 237, 159)',
         borderWidth: 1,
-        backgroundColor: 'rgb(253, 237, 159)',
+        backgroundColor: '#F8BC4D',
         borderTopLeftRadius: Dimensions.get('window').width * 2,
         borderTopRightRadius: Dimensions.get('window').width * 2
     }
