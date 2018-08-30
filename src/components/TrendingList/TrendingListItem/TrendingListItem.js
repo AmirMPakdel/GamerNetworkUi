@@ -1,8 +1,14 @@
 import React from 'react';
-import { View, TouchableWithoutFeedback, Animated } from 'react-native';
+import {
+    View,
+    Dimensions,
+    TouchableWithoutFeedback,
+    Animated
+} from 'react-native';
 import TrendingListGameItem from '../TrendingListGameItem/TrendingListGameItem';
 import MuniTextLight from '../../UI/MuniText/MuniTextLight';
 import SvgUri from 'react-native-svg-uri';
+import { BorderShadow, BoxShadow } from 'react-native-shadow';
 
 class TrendingListItem extends React.Component {
     state = {
@@ -41,27 +47,47 @@ class TrendingListItem extends React.Component {
         if (this.state.isBookmarked) {
             bookmarkFillColor = '#F8BC4D';
         }
+        const viewPortWidth = Dimensions.get('window').width;
 
         return (
             <View
                 style={{
                     width: +this.props.width,
-                    height: +this.props.height + 70 // 70 for bottom withe section bar (bottomCardSection)
+                    height: +this.props.height // 70 for bottom withe section bar (bottomCardSection)  and 10 for shadow
                 }}>
-                <TrendingListGameItem
-                    // the elevation is to bring the item on the bottomCardSection
-                    //this is for animation, bcuz the bottomCardSection should go under the item
-                    style={{ elevation: 2 }}
-                    isActive={isActive}
-                    gameName={this.props.gameName}
-                    gameInfo={this.props.gameInfo}
-                    gameRank={this.props.gameRank}
-                    source={this.props.source}
-                />
+                <BoxShadow
+                    setting={{
+                        width: this.props.width,
+                        height: this.props.height,
+                        color: '#111',
+                        border: 4,
+                        radius: 10,
+                        opacity: 0.12,
+                        x: 3,
+                        y: 5,
+                        style: {
+                            marginRight: 'auto',
+                            marginLeft: 'auto'
+                        }
+                    }}>
+                    <TrendingListGameItem
+                        // the elevation is to bring the item on the bottomCardSection
+                        //this is for animation, bcuz the bottomCardSection should go under the item
+                        style={{ elevation: 3 }}
+                        isActive={isActive}
+                        gameName={this.props.gameName}
+                        gameInfo={this.props.gameInfo}
+                        gameRank={this.props.gameRank}
+                        source={this.props.source}
+                    />
+                </BoxShadow>
+
                 <Animated.View
                     style={{
-                        backgroundColor: '#fff',
-                        height: 70,
+                        height: 70 + 10, //70 is the height of the botttomCardSection, 10 is for the extra shadow
+                        width: '100%',
+                        marginRight: 'auto',
+                        marginLeft: 'auto',
                         // animating the opacity as the position changes
                         opacity: this.state.bookmarkViewPosY.interpolate({
                             inputRange: [-80, 0],
@@ -71,46 +97,68 @@ class TrendingListItem extends React.Component {
                         transform: [
                             { translateY: this.state.bookmarkViewPosY }
                         ],
-                        width: '85%',
-                        borderBottomRightRadius: 10,
-                        borderBottomLeftRadius: 10,
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        paddingLeft: 10,
+                        overflow: 'visible',
                         elevation: 1 // this is bcuz the bottomCardSection must go under the Item
                     }}>
-                    {/* the container for the content of the bottomCardSection */}
-                    <View
-                        style={{
-                            flexDirection: 'row',
-                            justifyContent: 'space-around',
-                            marginTop: 'auto',
-                            marginBottom: 'auto'
+                    <BoxShadow
+                        setting={{
+                            width: this.props.width * 0.85, // true width of the white section
+                            height: 70,
+                            color: '#222',
+                            border: 7,
+                            radius: 10,
+                            opacity: 0.15,
+                            x: 2,
+                            y: 3,
+                            style: {
+                                //centring the bottomCardSection in Item
+                                marginRight: 'auto',
+                                marginLeft: 'auto'
+                            }
                         }}>
-                        <MuniTextLight fontSize={22} color="#000">
-                            Read More
-                        </MuniTextLight>
-                        {/* the vertical separator */}
+                        {/* the container for the content of the bottomCardSection */}
                         <View
                             style={{
-                                height: '120%',
-                                width: 2,
-                                backgroundColor: 'rgb(253, 237, 159)'
-                            }}
-                        />
-                        {/* bookmark icon */}
-                        <TouchableWithoutFeedback
-                            onPress={this._onBookMarkHandler}>
-                            <View style={{ width: 40, height: 30 }}>
-                                <SvgUri
-                                    height="100%"
-                                    width="100%"
-                                    source={require('../../../images/bookmark.svg')}
-                                    fill={bookmarkFillColor}
+                                width: '100%',
+                                height: '100%',
+                                backgroundColor: '#fff',
+                                borderBottomRightRadius: 10,
+                                borderBottomLeftRadius: 10,
+                                paddingLeft: 10
+                            }}>
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    justifyContent: 'space-around',
+                                    marginTop: 'auto',
+                                    marginBottom: 'auto'
+                                }}>
+                                <MuniTextLight fontSize={22} color="#000">
+                                    Read More
+                                </MuniTextLight>
+                                {/* the vertical separator */}
+                                <View
+                                    style={{
+                                        height: '120%',
+                                        width: 2,
+                                        backgroundColor: 'rgb(253, 237, 159)'
+                                    }}
                                 />
+                                {/* bookmark icon */}
+                                <TouchableWithoutFeedback
+                                    onPress={this._onBookMarkHandler}>
+                                    <View style={{ width: 40, height: 30 }}>
+                                        <SvgUri
+                                            height="100%"
+                                            width="100%"
+                                            source={require('../../../images/bookmark.svg')}
+                                            fill={bookmarkFillColor}
+                                        />
+                                    </View>
+                                </TouchableWithoutFeedback>
                             </View>
-                        </TouchableWithoutFeedback>
-                    </View>
+                        </View>
+                    </BoxShadow>
                 </Animated.View>
             </View>
         );
