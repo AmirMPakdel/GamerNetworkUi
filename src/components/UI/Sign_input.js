@@ -40,10 +40,11 @@ const styles = StyleSheet.create(
             margin:14,
             flexDirection:'row',
             alignItems:'center',
-            //backgroundColor : "#0000",
-            backgroundColor:'rgba(255, 255, 255, 0.4)',
-            //elevation:2,
-            //borderRadius:40,
+            backgroundColor:'rgba(255, 255, 255, 0.2)',
+            borderRadius:40,
+            shadowColor:'gold',
+            shadowOpacity:0.5,
+            shadowOffset:{height:4,width:2}
         },
 
         icon_con:{
