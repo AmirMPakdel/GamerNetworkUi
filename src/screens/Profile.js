@@ -2,24 +2,22 @@ import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 
-
-export default class Chests extends React.Component{
-
+export default class Shop extends React.Component{
 
     render(){
-
+        
         return(
 
             <View style={styles.container}>
-                <Button style={styles.button} title="Back" onPress={this.onpress}/>
-                <Text style={styles.title}>Chests</Text>
+                <Button style={styles.button} title="Next" onPress={this.onpress}/>
+                <Text style={styles.title}>Profile</Text>
             </View>
         );
     }
 
     onpress = ()=>{
 
-        this.props.navigation.navigate('Home')
+        this.props.navigation.navigate('Chests')
     }
 }
 
@@ -28,7 +26,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1, alignItems: 'center', justifyContent: 'center'
     },
-
+    
     title:{
 
         fontSize:26

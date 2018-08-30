@@ -10,7 +10,8 @@ const MuniTextItalic = props => {
         muniText: {
             fontFamily: 'Muli-ExtraLightItalic',
             fontSize: +props.fontSize,
-            color: props.color
+            color: props.color,
+            elevation:10
         }
     });
 

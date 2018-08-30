@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 
-export default class Contests extends React.Component{
+export default class Trending extends React.Component{
 
     render(){
 
@@ -10,14 +10,14 @@ export default class Contests extends React.Component{
 
             <View style={styles.container}>
                 <Button style={styles.button} title="Next" onPress={this.onpress}/>
-                <Text style={styles.title}>Contests</Text>
+                <Text style={styles.title}>Trending</Text>
             </View>
         );
     }
 
     onpress = ()=>{
 
-        this.props.navigation.navigate('Chests')
+        this.props.navigation.navigate('Home')
     }
 }
 

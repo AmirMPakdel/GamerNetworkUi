@@ -19,7 +19,7 @@ export default class Home extends React.Component{
 
     onpress = ()=>{
 
-        this.props.navigation.navigate('Chests')
+        this.props.navigation.navigate('Trending')
     }
 }
 
