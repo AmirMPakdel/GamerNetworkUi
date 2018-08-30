@@ -1,42 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import TrendingList from '../components/TrendingList/TrendingList';
 
-
-export default class Trending extends React.Component{
-
-    render(){
-
-        return(
-
-            <View style={styles.container}>
-                <Button style={styles.button} title="Next" onPress={this.onpress}/>
-                <Text style={styles.title}>Trending</Text>
-            </View>
-        );
-    }
-
-    onpress = ()=>{
-
-        this.props.navigation.navigate('Home')
+export default class Trending extends React.Component {
+    render() {
+        return <TrendingList itemWidth={360} itemHeight={360} />;
     }
 }
 
-const styles = StyleSheet.create({
-
-    container:{
-        flex: 1, alignItems: 'center', justifyContent: 'center'
-    },
-
-    title:{
-
-        fontSize:26
-    },
-
-    button:{
-
-        height:'20%',
-        width:'80%'
-
-    }
-
-})
+const styles = StyleSheet.create({});

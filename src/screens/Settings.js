@@ -6,7 +6,7 @@ import {
     ImageBackground,
     Dimensions
 } from 'react-native';
-import MuniTextView from './../components/UI/MuniTextView';
+import MuniTextView from '../components/UI/MuniText/MuniTextLight';
 
 export default class Settings extends React.Component {
     render() {
