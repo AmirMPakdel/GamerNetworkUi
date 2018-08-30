@@ -11,7 +11,7 @@ class BottomSection extends React.Component {
     componentDidMount() {
         Animated.timing(this.state.opacity, {
             toValue: 0.9,
-            duration: 800
+            duration: 2000
         }).start();
     }
     render() {

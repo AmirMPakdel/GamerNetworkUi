@@ -39,6 +39,7 @@ class TrendingList extends Component {
     };
 
     render() {
+        const viewport = Dimensions.get('window').width;
         return (
             <Carousel
                 ref={c => {
@@ -47,7 +48,16 @@ class TrendingList extends Component {
                 data={this.state.data}
                 renderItem={this.renderItem}
                 sliderWidth={Dimensions.get('window').width}
-                itemWidth={this.props.itemWidth}
+                itemWidth={this.props.itemWidth + 10}
+                hasParallaxImages={true}
+                inactiveSlideScale={0.91}
+                inactiveSlideOpacity={0.5}
+                centerContent={true}
+                activeSlideAlignment="center"
+                contentContainerCustomStyle={{ justifyContent: 'space-evenly' }}
+                slideStyle={{
+                    alignItems: 'center'
+                }}
             />
         );
     }

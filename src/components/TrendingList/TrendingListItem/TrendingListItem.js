@@ -8,7 +8,6 @@ const TrendingListItem = props => {
             style={{
                 width: +props.width,
                 height: +props.height,
-                alignItems: 'center'
             }}>
             <TrendingListGameItem
                 gameName={props.gameName}

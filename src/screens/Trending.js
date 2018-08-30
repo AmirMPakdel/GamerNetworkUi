@@ -4,7 +4,7 @@ import TrendingList from '../components/TrendingList/TrendingList';
 
 export default class Trending extends React.Component {
     render() {
-        return <TrendingList itemWidth={360} itemHeight={360} />;
+        return <TrendingList itemWidth={290} itemHeight={350} />;
     }
 }
 
