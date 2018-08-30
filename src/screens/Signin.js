@@ -18,20 +18,24 @@ export default class Signin extends React.Component{
 
                     <View style={styles.title_con}>
                         <MuniTextLight style={styles.tilte}
-                        fontSize={40} color="#f8f8f8">Log in</MuniTextLight>
+                        fontSize={48} color="#f8f8f8">Log in</MuniTextLight>
                     </View>
                     <View style={styles.circle}>
                         
                         <Sign_input
                         src={require('./../images/email_icon.png')}></Sign_input>
                     
-                        <Sign_input
+                        <Sign_input 
                         src={require('./../images/password_icon.png')}></Sign_input>
 
                         <View style={styles.texts_con}>
-                            <MuniTextLight color="#F8BC4D">Create Account</MuniTextLight>
+                            <MuniTextLight fontWeight="500"
+                            fontSize='15'
+                            color="rgba(219, 154, 15,0.8)">Create Account</MuniTextLight>
 
-                            <MuniTextLight color="#F8BC4D">Forgot Password</MuniTextLight>
+                            <MuniTextLight fontWeight="500"
+                            fontSize='15'
+                            color="rgba(219, 154, 15,0.8)">Forgot Password!</MuniTextLight>
                         </View>
                         
                     </View>
@@ -84,7 +88,6 @@ const styles = StyleSheet.create(
             flexDirection:'row',
             alignItems:'center',
             justifyContent:'space-between',
-            backgroundColor:'gray'
         },
 
         inputs:{

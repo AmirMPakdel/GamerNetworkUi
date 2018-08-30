@@ -19,7 +19,7 @@ export default class News extends React.Component {
                     <View style={styles.title_con}>
                         <MuniTextLight
                             style={styles.tilte}
-                            fontSize={40}
+                            fontSize={48}
                             color="#f8f8f8">
                             News
                         </MuniTextLight>

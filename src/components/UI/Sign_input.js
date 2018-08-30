@@ -35,13 +35,17 @@ export default class Sign_input extends React.Component{
 const styles = StyleSheet.create(
     {
         container:{
-            height:'12%',
+            height:'15%',
             width:'42%',
             margin:14,
             flexDirection:'row',
             alignItems:'center',
             backgroundColor:'rgba(255, 255, 255, 0.2)',
             borderRadius:40,
+            elevation:10,
+            shadowOpacity:0.5,
+            borderColor:'gold',
+            borderWidth:5,
             shadowColor:'gold',
             shadowOpacity:0.5,
             shadowOffset:{height:4,width:2}

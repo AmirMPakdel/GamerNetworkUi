@@ -19,7 +19,7 @@ export default class Settings extends React.Component {
                     <View style={styles.title_con}>
                         <MuniTextView
                             style={styles.tilte}
-                            fontSize={40}
+                            fontSize={48}
                             color="#f8f8f8">
                             Settings
                         </MuniTextView>
