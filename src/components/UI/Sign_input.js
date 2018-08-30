@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, TextInput, Dimensions, Image } from 'react-native';
-import SvgUri from 'react-native-svg-uri';
 import { BoxShadow } from 'react-native-shadow';
 
 export default class Sign_input extends React.Component {
