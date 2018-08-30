@@ -1,41 +1,29 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-
-export default class Shop extends React.Component{
-
-    render(){
-        
-        return(
-
-            <View style={styles.container}>
-                
-            </View>
-        );
+export default class Shop extends React.Component {
+    render() {
+        return <View style={styles.container} />;
     }
 
-    onpress = ()=>{
-
-        this.props.navigation.navigate('Chests')
-    }
+    onpress = () => {
+        this.props.navigation.navigate('Chests');
+    };
 }
 
 const styles = StyleSheet.create({
-
-    container:{
-        flex: 1, alignItems: 'center', justifyContent: 'center'
-    },
-    
-    title:{
-
-        fontSize:26
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 
-    button:{
+    title: {
+        fontSize: 26
+    },
 
-        height:'20%',
-        width:'80%'
-
+    button: {
+        height: '20%',
+        width: '80%'
     }
-
-})
+});

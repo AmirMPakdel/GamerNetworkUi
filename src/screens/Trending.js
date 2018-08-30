@@ -25,7 +25,7 @@ export default class Trending extends React.Component {
         return (
             <View style={styles.container}>
                 {/* the container for the trending game list, elevation is to come above the circle */}
-                <View style={{ elevation: 10, marginTop: '10%' }}>
+                <View style={{ elevation: 10 }}>
                     <TrendingList
                         data={data}
                         // this values are just for the image , bottomCardSection will append 70 in height automatically

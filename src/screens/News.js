@@ -6,15 +6,10 @@ import {
     ImageBackground,
     Dimensions
 } from 'react-native';
-import MuniTextLight from '../components/UI/MuniText/MuniTextLight';
 
 export default class News extends React.Component {
     render() {
-        return (
-            <View>
-                
-            </View>
-        );
+        return <View />;
     }
 
     onpress = () => {
