@@ -5,32 +5,12 @@ import TrendingListItem from './TrendingListItem/TrendingListItem';
 
 //props : itemWidth, itemHeight
 class TrendingList extends Component {
-    state = {
-        data: [
-            {
-                gameName: 'Battlefield',
-                gameInfo: 'sdklfsdkfnskdn sdklfn lsdknf ',
-                source: require('../../images/Battlefield.jpg')
-            },
-            {
-                gameName: 'Battlefield',
-                gameInfo: 'sdklfsdkfnskdn sdklfn lsdknf ',
-                source: require('../../images/Battlefield.jpg')
-            },
-            {
-                gameName: 'Battlefield',
-                gameInfo: 'sdklfsdkfnskdn sdklfn lsdknf ',
-                source: require('../../images/Battlefield.jpg')
-            }
-        ]
-    };
-
     renderItem = ({ item, index }) => {
         return (
             <TrendingListItem
                 gameName={item.gameName}
                 gameInfo={item.gameInfo}
-                gameRank={index}
+                gameRank={index + 1}
                 source={item.source}
                 width={this.props.itemWidth}
                 height={this.props.itemHeight}
@@ -45,10 +25,11 @@ class TrendingList extends Component {
                 ref={c => {
                     this._carousel = c;
                 }}
-                data={this.state.data}
+                data={this.props.data}
                 renderItem={this.renderItem}
                 sliderWidth={Dimensions.get('window').width}
                 itemWidth={this.props.itemWidth + 10}
+                itemHeight={this.props.itemHeight}
                 hasParallaxImages={true}
                 inactiveSlideScale={0.91}
                 inactiveSlideOpacity={0.5}
