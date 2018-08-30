@@ -19,7 +19,9 @@ class TrendingListGameItem extends Component {
                     />
                     <View style={styles.gameRank}>
                         <MuniTextLight fontSize="72" color="#fff">
-                            {this.props.gameRank}
+                            {+this.props.gameRank < 10
+                                ? '0' + this.props.gameRank
+                                : this.props.gameRank}
                         </MuniTextLight>
                     </View>
                 </ImageBackground>
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
     },
     gameRank: {
         position: 'absolute',
-        bottom: 105,
+        bottom: 110,
         right: '5%'
     },
     bgImage: {
