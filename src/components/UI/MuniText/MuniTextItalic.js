@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 /**
- * 
- * @param {fonntSize} fontSize 
+ *
+ * @param {fonntSize} fontSize
  * @param {color} color
  */
-const MuniTextView = props => {
+const MuniTextItalic = props => {
     const styles = StyleSheet.create({
         muniText: {
-            fontFamily: 'Muli',
+            fontFamily: 'Muli-ExtraLightItalic',
             fontSize: +props.fontSize,
             color: props.color
         }
@@ -21,4 +21,4 @@ const MuniTextView = props => {
     );
 };
 
-export default MuniTextView;
+export default MuniTextItalic;
