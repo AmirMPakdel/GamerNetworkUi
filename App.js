@@ -158,12 +158,12 @@ const changeImage =(selectedTab)=>{
     switch (selectedTab){
         case 'Home':
         tabInfo.Image = require('./src/images/1.png');
-        tabInfo.tiltle = "Home";
+        tabInfo.title = "Home";
         return tabInfo;
 
         case 'Trending':
         tabInfo.Image = require('./src/images/2.png');
-        tabInfo.title = "NeTrendingws";
+        tabInfo.title = "Trending";
         return tabInfo;
 
         case 'Profile':
@@ -177,7 +177,7 @@ const changeImage =(selectedTab)=>{
         return tabInfo;
 
         case 'News':
-        tabInfo.Image = require('./src/images/23.png');
+        tabInfo.Image = require('./src/images/25.png');
         tabInfo.title = "News"
         return tabInfo;
 
@@ -187,8 +187,8 @@ const changeImage =(selectedTab)=>{
         return tabInfo;
 
         default:
-        tabInfo.Image = require('./src/images/24.png');
-        tabInfo.tiltle = "Home";
+        tabInfo.Image = require('./src/images/1.png');
+        tabInfo.title = "Home";
         return tabInfo;
     }
 }
