@@ -4,7 +4,8 @@ import {
     Dimensions,
     Text,
     View,
-    ImageBackground
+    ImageBackground,
+    KeyboardAvoidingView
 } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
 import Home from './src/screens/Home';
@@ -15,9 +16,10 @@ import News from './src/screens/News';
 import Settings from './src/screens/Settings';
 import Tabbar from './src/components/Tabbar';
 import Signin from './src/screens/Signin';
-
 import { connect } from 'react-redux';
-import { onTabChanged } from './src/store/actions/exports';
+
+
+const Initial_Route_Name = "Signin";
 
 class App extends Component {
 
@@ -138,7 +140,7 @@ const RootStack = createBottomTabNavigator(
         }
     },
     {
-        initialRouteName: 'Home',
+        initialRouteName: Initial_Route_Name,
 
         animationEnabled: true,
 
