@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet,Text, View, TextInput, Dimensions, Image } from 'react-native';
 import SvgUri from 'react-native-svg-uri';
 
-export default class Sign_input extends React.Component {
+export default class SignInput extends React.Component {
     render() {
         return (
             

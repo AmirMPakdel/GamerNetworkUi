@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground, Dimensions } from 'react-native';
 import MuniTextLight from './../components/UI/MuniText/MuniTextLight';
-import Sign_input from './../components/signin/Sign_input';
+import SignInput from '../components/signin/Sign_input';
 import MuniButton from './../components/UI/MuniButton';
 
 
@@ -16,10 +16,10 @@ export default class Signin extends React.Component {
         return (
             <View style={styles.container}>
 
-                <Sign_input src={require('./../images/email.svg')}
+                <SignInput src={require('./../images/email.svg')}
                 placeholder="Email" />
 
-                <Sign_input src={require('./../images/password.svg')}
+                <SignInput src={require('./../images/password.svg')}
                 placeholder="password" />
 
                 <View style={styles.texts_con}>
