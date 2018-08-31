@@ -19,7 +19,7 @@ export default class Tab extends React.Component {
     }
 
     onTabPressed = () => {
-        this.tabSelected(this.name);
+        this.tabSelected(this.props.name);
     };
 
     render() {

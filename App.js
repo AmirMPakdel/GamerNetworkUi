@@ -16,20 +16,27 @@ import Settings from './src/screens/Settings';
 import Tabbar from './src/components/Tabbar';
 import Signin from './src/screens/Signin';
 
-export default class App extends Component {
+import { connect } from 'react-redux';
+import { onTabChanged } from './src/store/actions/exports';
+
+class App extends Component {
+
     render() {
+
+        tabInfo = changeImage(this.props.selectedTab);
+
         return (
             <ImageBackground
                 style={styles.bg}
                 blurRadius={0.4}
-                source={require('./src/images/2.png')}>
+                source={tabInfo.Image}>
                 <View style={styles.container}>
                     <View style={styles.title_con}>
                         <MuniTextLight
                             style={styles.tilte}
                             fontSize={48}
                             color="#f8f8f8">
-                            Home
+                            {tabInfo.title}
                         </MuniTextLight>
                     </View>
 
@@ -43,7 +50,19 @@ export default class App extends Component {
         );
     }
 }
-//<View style={styles.circle}/>
+
+
+//mapping all needed states into props of this component
+const mapStateToProps = newState => ({
+    //got form Tabbar.js
+    selectedTab: newState.navReducer.selectedTab
+});
+
+
+export default connect(
+    mapStateToProps
+)(App);
+
 const styles = StyleSheet.create({
     bg: {
         height: '100%',
@@ -123,8 +142,6 @@ const RootStack = createBottomTabNavigator(
 
         animationEnabled: true,
 
-        headerStyle: { marginTop: 2 },
-
         swipeEnabled: false, //for now
 
         tabBarComponent: Tabbar,
@@ -132,3 +149,46 @@ const RootStack = createBottomTabNavigator(
         tabBarOptions: {}
     }
 );
+
+// this will set the tab info according to the Redux state from Tabbar.js
+const changeImage =(selectedTab)=>{
+
+    tabInfo = {};
+
+    switch (selectedTab){
+        case 'Home':
+        tabInfo.Image = require('./src/images/1.png');
+        tabInfo.tiltle = "Home";
+        return tabInfo;
+
+        case 'Trending':
+        tabInfo.Image = require('./src/images/2.png');
+        tabInfo.title = "NeTrendingws";
+        return tabInfo;
+
+        case 'Profile':
+        tabInfo.Image = require('./src/images/3.png');
+        tabInfo.title = "Profile";
+        return tabInfo;
+
+        case 'Signin':
+        tabInfo.Image = require('./src/images/20.png');
+        tabInfo.title = "Signin";
+        return tabInfo;
+
+        case 'News':
+        tabInfo.Image = require('./src/images/23.png');
+        tabInfo.title = "News"
+        return tabInfo;
+
+        case 'Settings':
+        tabInfo.Image = require('./src/images/24.png');
+        tabInfo.title = "Settings"
+        return tabInfo;
+
+        default:
+        tabInfo.Image = require('./src/images/24.png');
+        tabInfo.tiltle = "Home";
+        return tabInfo;
+    }
+}

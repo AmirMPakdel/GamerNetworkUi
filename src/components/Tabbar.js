@@ -5,7 +5,7 @@ import Tab from './Tab';
 import { connect } from 'react-redux';
 import { onTabChanged } from '../store/actions/exports';
 
-class Chests extends React.Component {
+class Tabbar extends React.Component {
     render() {
         return (
             <View style={styles.container}>
@@ -79,4 +79,4 @@ const mapDispatchesToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchesToProps
-)(Chests);
+)(Tabbar);
