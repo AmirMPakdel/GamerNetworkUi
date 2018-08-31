@@ -11,12 +11,12 @@ const MuniTextItalic = props => {
             fontFamily: 'Muli-ExtraLightItalic',
             fontSize: +props.fontSize,
             color: props.color,
-            elevation:10
+            elevation: 10
         }
     });
 
     return (
-        <Text {...props} style={styles.muniText}>
+        <Text {...props} style={{ ...styles.muniText, ...props.style }}>
             {props.children}
         </Text>
     );

@@ -10,10 +10,7 @@ import MuniTextView from '../components/UI/MuniText/MuniTextLight';
 
 export default class Settings extends React.Component {
     render() {
-        return (
-            <View>
-            </View>
-        );
+        return <View />;
     }
 
     onpress = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 /**
- * 
- * @param {fonntSize} fontSize 
+ *
+ * @param {fonntSize} fontSize
  * @param {color} color
  */
 const MuniTextLight = props => {
@@ -16,7 +16,7 @@ const MuniTextLight = props => {
     });
 
     return (
-        <Text  {...props} style={styles.muniText}>
+        <Text {...props} style={{ ...styles.muniText, ...props.style }}>
             {props.children}
         </Text>
     );

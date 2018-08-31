@@ -8,13 +8,24 @@ class BottomSection extends React.Component {
         opacity: new Animated.Value(0)
     };
 
-    componentDidMount() {
-        Animated.timing(this.state.opacity, {
-            toValue: 0.9,
-            duration: 2000
-        }).start();
+    animateBottomSection() {
+        if (this.props.isActive) {
+            Animated.timing(this.state.opacity, {
+                duration: 800,
+                toValue: 0.9
+            }).start();
+        }
+        // this condition check does not take effect on UI, but it really improves the performance and
+        // frame rate by avoiding start of the dissappearal animation when it's already disappeared !!!
+        else if (this.state.opacity !== 0) {
+            Animated.timing(this.state.opacity, {
+                duration: 400,
+                toValue: 0
+            }).start();
+        }
     }
     render() {
+        this.animateBottomSection();
         return (
             <Animated.View
                 style={{
@@ -24,6 +35,7 @@ class BottomSection extends React.Component {
                 <MuniTextLight fontSize="26" color="#fff">
                     {this.props.gameName}
                 </MuniTextLight>
+                {/* the horizontal line between the gameName and gameInfo */}
                 <View style={styles.lineSeparator} />
                 <View style={styles.gameInfo}>
                     <MuniTextItalic
